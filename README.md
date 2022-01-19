@@ -1,5 +1,5 @@
 # kmod-force-remove-bootfb
-Force remove bootfb for VFIO GPU Passthrough.
+An Openwrt kmod that force remove bootfb for VFIO GPU Passthrough.
 # Source
 
 src by Robert Ou ( @rqou ?? )

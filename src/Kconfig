@@ -1,6 +1,0 @@
-# SPDX-License-Identifier: GPL-2.0-only
-config FORCE_REMOVE_BOOTFB
-	tristate "FORCE_REMOVE_BOOTFB Module for VFIO GPU Passthrough"
-	default m
-	help
-	  If unsure, say N.

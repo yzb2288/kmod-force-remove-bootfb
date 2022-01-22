@@ -6,6 +6,6 @@ force-remove-bootfb.c by Robert Ou ( @rqou ?? )
 
 https://lists.gnu.org/archive/html/qemu-devel/2016-07/msg02469.html
 
-sh by furkanmustafa
+scripts by furkanmustafa
 
 https://github.com/furkanmustafa/forcefully-remove-bootfb

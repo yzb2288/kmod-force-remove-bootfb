@@ -10,7 +10,9 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=force-remove-bootfb
-PKG_RELEASE:=1
+PKG_RELEASE:=$(AUTORELEASE)
+
+PKG_LICENSE:=GPL-2.0
 
 PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/$(PKG_NAME)
 
@@ -42,6 +44,11 @@ define Build/Compile
 		$(MAKE_OPTS) \
 		CONFIG_FORCE_REMOVE_BOOTFB=m \
 		modules
+endef
+
+define KernelPackage/force-remove-bootfb/install
+	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_BIN) ./files/etc/init.d/force-remove-bootfb $(1)/etc/init.d/
 endef
 
 $(eval $(call KernelPackage,force-remove-bootfb))

@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008 OpenWrt.org
+
+START=91
+
+start() {
+	range=$(grep BOOTFB /proc/iomem | awk '{ print $1 }')
+	IFS='-' read -r addr0 addr1 <<EOF
+$range
+EOF
+	
+	start=$addr0
+	end=$addr1
+
+	sleep 2
+
+	insmod force-remove-bootfb bootfb_start=0x$start bootfb_end=0x$end
+	rmmod force-remove-bootfb
+}
